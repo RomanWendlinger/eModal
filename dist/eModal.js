@@ -59,7 +59,7 @@
             allowContentRecycle: true,
             confirmLabel: Object.keys(LABEL)[0],
             labels: LABEL,
-            loadingHtml: '<h5>Loading...</h5><div class=progress><div class="progress-bar progress-bar-striped active" style="width: 100%"></div></div>',
+            loadingHtml: '<div class="container"><h5>Loading...</h5><div class=progress><div class="progress-bar progress-bar-striped active" style="width: 100%"></div></div></div>',
             size: EMPTY,
             title: 'Attention',
             autofocus: false
@@ -169,7 +169,7 @@
                 }
             } else {
                 //if no buttons defined by user, add a standard close button.
-                messageFotter.append('<button class="x btn btn-primary" data-dismiss=modal type=button>Close</button>');
+                //messageFotter.append('<button class="x btn btn-primary" data-dismiss=modal type=button>Close</button>');
             }
             return messageFotter;
         }
@@ -230,15 +230,17 @@
             return $modal;
 
             function createModalElement() {
-                return $('<div class="modal" tabindex="-1">' +
+                return $('<div class="modal eModal" tabindex="-1">' +
                             '<div class=modal-dialog>' +
                               '<div class=modal-content>' +
                                 '<div class=modal-header>' +
-                                  '<button type=button class="close" data-dismiss=modal>' +
-                                    '<span aria-hidden=true>&times;</span>' +
-                                    '<span class=sr-only>Close</span>' +
-                                  '</button>' +
-                                  '<h5 class=modal-title></h5>' +
+                                  '<div class="container">' +
+                                    '<button type=button class="close" data-dismiss=modal>' +
+                                      '<span aria-hidden=true>&times;</span>' +
+                                      '<span class=sr-only>Close</span>' +
+                                    '</button>' +
+                                    '<h5 class=modal-title></h5>' +
+                                  '</div>' +
                                 '</div>' +
                               '</div>' +
                             '</div>' +
